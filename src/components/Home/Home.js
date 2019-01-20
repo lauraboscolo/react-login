@@ -14,6 +14,7 @@ class Home extends Component {
   }
 
   componentDidMount() {
+    console.log(sessionStorage.getItem('userDate'));
     let data = JSON.parse(sessionStorage.getItem('userData'));
     console.log(data);
     
