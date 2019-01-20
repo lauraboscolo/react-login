@@ -53,10 +53,10 @@ class Welcome extends Component {
   render() {
 
     if (this.state.redirect || sessionStorage.getItem('userData')) {
-      console.log(sessionStorage.getItem('userData').profileObj);
       return (<Redirect to={{
                 pathname: '/home',
-                state: { name: sessionStorage.getItem('userData') }
+                //state: { name: sessionStorage.getItem('userData') }
+                state : { name: 'Usuário Teste'}
               }}/>)
     }
 
