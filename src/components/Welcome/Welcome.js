@@ -31,6 +31,7 @@ class Welcome extends Component {
     }*/
 
     if (type === 'google' && res.w3.U3) {
+      console.log('usando login do google')
       postData = {
         name: res.w3.ig,
         provider: type,
@@ -69,7 +70,7 @@ class Welcome extends Component {
     const responseGoogle = (response) => {
       console.log("google console");
       console.log(response);
-      sessionStorage.setItem("userData", JSON.stringify(response));
+      sessionStorage.setItem("userData", response);
       this.signup(response, 'google');
     }
 
