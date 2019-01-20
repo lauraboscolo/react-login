@@ -14,7 +14,6 @@ class Home extends Component {
   }
 
   componentDidMount() {
-    console.log(JSON.parse(sessionStorage.getItem("userData")));
     let data = JSON.parse(sessionStorage.getItem("userData"));
     
     this.setState({ name : data.profileObj.name })
