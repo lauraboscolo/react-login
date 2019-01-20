@@ -44,7 +44,7 @@ class Welcome extends Component {
     if (postData) {
       PostData('signup', postData).then((result) => {
         let responseJson = result;
-        sessionStorage.setItem("userData", JSON.stringify(responseJson));
+        sessionStorage.setItem("userData", JSON.stringify(responseJson).profileObj);
         this.setState({redirect: true});
       });
     } else {}
@@ -56,7 +56,7 @@ class Welcome extends Component {
       console.log(sessionStorage.getItem('userData').profileObj);
       return (<Redirect to={{
                 pathname: '/home',
-                state: { name: sessionStorage.getItem('userData').profileObj }
+                state: { name: sessionStorage.getItem('userData') }
               }}/>)
     }
 

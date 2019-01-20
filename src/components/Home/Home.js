@@ -32,7 +32,7 @@ class Home extends Component {
 
     return (
       <div >
-      Welcome {this.state.name}
+      Welcome {this.state.givenName}
       </div>
     );
   }
