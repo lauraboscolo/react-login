@@ -45,7 +45,7 @@ class Welcome extends Component {
     if (postData) {
       PostData('signup', postData).then((result) => {
         let responseJson = result;
-        sessionStorage.setItem("userData", JSON.stringify(responseJson));
+        window.sessionStorage.setItem("userData", JSON.stringify(responseJson));
         this.setState({redirect: true});
       });
     } else {}
@@ -53,7 +53,7 @@ class Welcome extends Component {
 
   render() {
 
-    if (this.state.redirect || sessionStorage.getItem('userData')) {
+    if (this.state.redirect || window.sessionStorage.getItem('userData')) {
       return (<Redirect to={{
                 pathname: '/home',
                 //state: { name: sessionStorage.getItem('userData') }
@@ -70,7 +70,7 @@ class Welcome extends Component {
     const responseGoogle = (response) => {
       console.log("google console");
       console.log(response);
-      sessionStorage.setItem("userData", response);
+      window.sessionStorage.setItem("userData", response);
       this.signup(response, 'google');
     }
 
