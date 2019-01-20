@@ -31,7 +31,6 @@ class Welcome extends Component {
     }*/
 
     if (type === 'google' && res.w3.U3) {
-      console.log('usando login do google')
       postData = {
         name: res.w3.ig,
         provider: type,
@@ -44,8 +43,8 @@ class Welcome extends Component {
 
     if (postData) {
       PostData('signup', postData).then((result) => {
-        let responseJson = result;
-        window.sessionStorage.setItem("userData", JSON.stringify(responseJson));
+        //let responseJson = result;
+        //sessionStorage.setItem("userData", JSON.stringify(responseJson));
         this.setState({redirect: true});
       });
     } else {}
@@ -56,33 +55,22 @@ class Welcome extends Component {
     if (this.state.redirect || window.sessionStorage.getItem('userData')) {
       return (<Redirect to={{
                 pathname: '/home',
-                //state: { name: sessionStorage.getItem('userData') }
-                state : { name: 'Usuário Teste'}
+                state: { name: window.sessionStorage.getItem('userData') }
               }}/>)
     }
 
-    /*const responseFacebook = (response) => {
-      console.log("facebook console");
-      console.log(response);
-      this.signup(response, 'facebook');
-    }*/
-
     const responseGoogle = (response) => {
-      console.log("google console");
-      console.log(response);
-      window.sessionStorage.setItem("userData", response);
+      window.sessionStorage.setItem("userData", JSON.stringify(response));
       this.signup(response, 'google');
     }
 
     return (
-
       <div>
             <GoogleLogin
               clientId="201522050071-dt45rma1lcrcau4vvffld7i99lp6b8ci.apps.googleusercontent.com"
               buttonText="Login with Google"
               onSuccess={responseGoogle}
               onFailure={responseGoogle}/>
-
       </div>
     );
   }
