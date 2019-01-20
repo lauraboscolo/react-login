@@ -53,7 +53,10 @@ class Welcome extends Component {
   render() {
 
     if (this.state.redirect || sessionStorage.getItem('userData')) {
-      return (<Redirect to={'/home'}/>)
+      return (<Redirect to={{
+                pathname: '/home',
+                state: { name: sessionStorage.getItem('userData').profileObj.givenName, }
+              }}/>)
     }
 
     /*const responseFacebook = (response) => {
@@ -65,6 +68,7 @@ class Welcome extends Component {
     const responseGoogle = (response) => {
       console.log("google console");
       console.log(response);
+      console.log(sessionStorage.getItem('userData'));
       this.signup(response, 'google');
     }
 
