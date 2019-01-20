@@ -45,7 +45,7 @@ class Welcome extends Component {
     if (postData) {
       PostData('signup', postData).then((result) => {
         let responseJson = result;
-        console.log(sessionStorage.getItem('userData'));
+        sessionStorage.setItem("userData", JSON.stringify(responseJson));
         this.setState({redirect: true});
       });
     } else {}
