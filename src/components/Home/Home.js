@@ -14,7 +14,6 @@ class Home extends Component {
   }
 
   componentDidMount() {
-    console.log(sessionStorage.getItem("userData"));
     console.log(JSON.parse(sessionStorage.getItem("userData")));
     let data = JSON.parse(sessionStorage.getItem("userData"));
     
@@ -33,7 +32,7 @@ class Home extends Component {
 
     return (
       <div >
-      Welcome {this.state.givenName}
+      Welcome {this.state.name}
       </div>
     );
   }
