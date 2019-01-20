@@ -4,7 +4,7 @@ import {
     getPost, 
     clap,
     follow
-} from './../redux/actions/actions'
+} from '../redux/actions/actions'
 import PropTypes from 'prop-types'
 import FollowButton from './FollowButton'
 
