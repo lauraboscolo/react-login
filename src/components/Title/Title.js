@@ -13,7 +13,7 @@ class Title extends Component {
   }
 
   logout(){
-    sessionStorage.setItem("userData",'');
+    sessionStorage.setItem("candidateData",'');
     sessionStorage.clear();
     this.setState({redirect: true});
 

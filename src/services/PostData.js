@@ -1,4 +1,4 @@
-export function PostData(type, userData) {
+export function PostData(type, candidateData) {
     let BaseURL = 'https://apipaypal.9lessons.info/apipaypal/';
     //let BaseURL = 'http://localhost/socialapi/';
 
@@ -7,7 +7,7 @@ export function PostData(type, userData) {
          
         fetch(BaseURL+type, {
             method: 'POST',
-            body: JSON.stringify(userData)
+            body: JSON.stringify(candidateData)
           })
           .then((response) => response.json())
           .then((res) => {

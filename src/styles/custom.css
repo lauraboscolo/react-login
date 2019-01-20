@@ -72,10 +72,10 @@ h2{
     -ms-touch-action: manipulation;
     touch-action: manipulation;
     cursor: pointer;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
+    -webkit-candidate-select: none;
+    -moz-candidate-select: none;
+    -ms-candidate-select: none;
+    candidate-select: none;
     background-image: none;
     border: 1px solid transparent;
     border-radius: 4px;

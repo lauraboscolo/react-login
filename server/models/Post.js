@@ -36,7 +36,7 @@ PostSchema.methods.addAuthor = function (author_id) {
 }
 PostSchema.methods.getCandidatePost = function (_id) {
     Post.find({'author': _id}).then((post) => {
-        return article
+        return post
     })
 }
 module.exports = mongoose.model('Post', PostSchema)
