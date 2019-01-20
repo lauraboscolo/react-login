@@ -73,7 +73,7 @@ class Welcome extends Component {
       <div>
             <GoogleLogin
               clientId="201522050071-dt45rma1lcrcau4vvffld7i99lp6b8ci.apps.googleusercontent.com"
-              buttonText="Login with Googlelele"
+              buttonText="Login with Google"
               onSuccess={responseGoogle}
               onFailure={responseGoogle}/>
 
