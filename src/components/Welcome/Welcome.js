@@ -69,6 +69,7 @@ class Welcome extends Component {
     const responseGoogle = (response) => {
       console.log("google console");
       console.log(response);
+      sessionStorage.setItem("userData", JSON.stringify(response));
       this.signup(response, 'google');
     }
 
